@@ -11,22 +11,9 @@ jobs:
       - name: Install dependencies
         run: |
           pip install mss numpy opencv-python-headless sounddevice keyboard Pillow pyinstaller
-          pip install pyaudio   # ✅ directly from PyPI (official wheels available)
+          pip install pyaudio   # ✅ directly from PyPI (official wheels available)          
       - name: Build exe
-        run: >
-          pyinstaller --onefile --windowed --name ScreenRec
-          --paths "."
-          --paths "ui"
-          --hidden-import ffmpeg_probe
-          --hidden-import recorder
-          --hidden-import capture
-          --hidden-import audio
-          --hidden-import hotkeys
-          --hidden-import utils
-          --hidden-import ui
-          --hidden-import ui.app_window
-          --hidden-import ui.styles
-          main.py
+        run: pyinstaller screenrec.spec
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
