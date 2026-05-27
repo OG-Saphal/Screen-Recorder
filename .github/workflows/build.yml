@@ -1,0 +1,22 @@
+name: Build ScreenRec.exe
+on: [push]
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: |
+          pip install mss numpy opencv-python-headless sounddevice keyboard Pillow pyinstaller
+          pip install pipwin
+          pipwin install pyaudio
+      - name: Build exe
+        run: pyinstaller --onefile --windowed --name ScreenRec main.py
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: ScreenRec
+          path: dist/ScreenRec.exe
