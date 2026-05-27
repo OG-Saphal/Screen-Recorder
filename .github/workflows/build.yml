@@ -11,8 +11,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install mss numpy opencv-python-headless sounddevice keyboard Pillow pyinstaller
-          pip install pipwin
-          pipwin install pyaudio
+          pip install pyaudio   # ✅ directly from PyPI (official wheels available)
       - name: Build exe
         run: pyinstaller --onefile --windowed --name ScreenRec main.py
       - name: Upload artifact
