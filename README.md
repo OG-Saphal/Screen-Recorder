@@ -1,6 +1,6 @@
 # ScreenRec
 
-A lightweight screen recorder for Windows 10, built in Python. Designed specifically for low-powered machines where OBS Studio causes lag during gameplay. ScreenRec captures your screen using `mss` (zero GPU overhead) and encodes via FFmpeg, using Intel Quick Sync Video (h264_qsv) when available or falling back to `libx264 ultrafast` automatically. Output is crash-safe (recorded to MKV first, then remuxed to MP4 on stop). The UI is a small always-on-top floating window that stays out of your way.
+A lightweight screen recorder for Windows, built in Python. Designed specifically for low-powered machines where OBS Studio causes lag during gameplay. ScreenRec captures your screen using `mss` (zero GPU overhead) and encodes via FFmpeg, using Intel Quick Sync Video (h264_qsv) when available or falling back to `libx264 ultrafast` automatically. Output is crash-safe (recorded to MKV first, then remuxed to MP4 on stop). The UI is a small always-on-top floating window that stays out of your way.
 
 ---
 
